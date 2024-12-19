@@ -98,9 +98,6 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @return
      */
     public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
-        //设置分页参数
-        employeePageQueryDTO.setPage(NumConstant.ONE);
-        employeePageQueryDTO.setPageSize(NumConstant.TEN);
         //开始分页
         PageHelper.startPage(employeePageQueryDTO.getPage(), employeePageQueryDTO.getPageSize());
         //查询员工数据

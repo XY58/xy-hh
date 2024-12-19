@@ -90,6 +90,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.insert(employee);
     }
 
+
     /**
      * 员工分页查询
      *
@@ -110,6 +111,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         return new PageResult(total, result);
     }
 
-
-
+    /**
+     * 启用禁用员工账号
+     */
+    public void startOrStop(Integer status, Long id) {
+        //创建一个Employee对象，设置状态和id
+        Employee employee = Employee.builder()
+                .status(status)//启用禁用状态
+                .id(id)//员工id
+                .build();//构建对象
+        //调用mapper层方法
+        employeeMapper.update(employee);
+    }
 }

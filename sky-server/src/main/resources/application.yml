@@ -34,7 +34,7 @@ sky:
     # 设置jwt签名加密时使用的秘钥
     admin-secret-key: itcast
     # 设置jwt过期时间
-    #TODO 时间多加一个0，加长令牌时间，有助于前期测试，后期完善以后删除
-    admin-ttl: 72000000
+    #TODO 时间多加一个0000，加长令牌时间，有助于前期测试，后期完善以后删除
+    admin-ttl: 72000000000
     # 设置前端传递过来的令牌名称
     admin-token-name: token

@@ -165,6 +165,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         //对新密码进行md5加密
         passwordEditDTO.setNewPassword(DigestUtils.md5DigestAsHex(passwordEditDTO.getNewPassword().getBytes()));
         //设置新密码
-        employeeMapper.update(new Employee(currentId, passwordEditDTO.getNewPassword()));
+        employee.setPassword(passwordEditDTO.getNewPassword());
+        //设置修改人信息
+        employee.setId(currentId);
+        employee.setUpdateTime(LocalDateTime.now());
+        employeeMapper.update(employee);
     }
 }

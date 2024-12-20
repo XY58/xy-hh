@@ -42,8 +42,5 @@ public class Employee implements Serializable {
 
     private Long updateUser;
 
-    public Employee(Long id, String password) {
-        this.id = id;
-        this.password = password;
-    }
+
 }

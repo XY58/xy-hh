@@ -82,7 +82,7 @@ public class EmployeeController {
      */
     @ApiOperation("新增员工")
     @PostMapping
-    public Result save(@RequestBody EmployeeDTO employeeDTO){
+    public Result save(@RequestBody EmployeeDTO employeeDTO) {
         log.info("新增员工，员工数据：{}", employeeDTO);
         employeeService.save(employeeDTO);
         return Result.success();
@@ -93,7 +93,7 @@ public class EmployeeController {
      */
     @ApiOperation("分页查询员工")
     @GetMapping("/page")
-    public Result<PageResult> page(EmployeePageQueryDTO employeePageQueryDTO){
+    public Result<PageResult> page(EmployeePageQueryDTO employeePageQueryDTO) {
         log.info("分页查询员工，员工数据：{}", employeePageQueryDTO);
         PageResult pageResult = employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pageResult);
@@ -101,10 +101,10 @@ public class EmployeeController {
 
     /**
      * 启用禁用员工账号
-      */
+     */
     @ApiOperation("启用禁用员工账号")
     @PostMapping("/status/{status}")
-    public Result startOrStop(@PathVariable Integer status, Long id){
+    public Result startOrStop(@PathVariable Integer status, Long id) {
         log.info("启用禁用员工账号：{}", id);
         employeeService.startOrStop(status, id);
         return Result.success();
@@ -115,7 +115,7 @@ public class EmployeeController {
      */
     @ApiOperation("根据id查询员工")
     @GetMapping("/{id}")
-    public Result<Employee> getById(@PathVariable Long id){
+    public Result<Employee> getById(@PathVariable Long id) {
         log.info("根据id查询员工：{}", id);
         Employee employee = employeeService.getById(id);
         return Result.success(employee);
@@ -126,7 +126,7 @@ public class EmployeeController {
      */
     @ApiOperation("修改员工信息")
     @PutMapping
-    public Result update(@RequestBody EmployeeDTO employeeDTO){
+    public Result update(@RequestBody EmployeeDTO employeeDTO) {
         log.info("修改员工信息：{}", employeeDTO);
         employeeService.update(employeeDTO);
         return Result.success();
@@ -137,7 +137,7 @@ public class EmployeeController {
      */
     @ApiOperation("根据id修改员工密码")
     @PutMapping("/editPassword")
-    public Result editPassword(@RequestBody PasswordEditDTO passwordEditDTO){
+    public Result editPassword(@RequestBody PasswordEditDTO passwordEditDTO) {
         log.info("根据id修改员工密码：{}", passwordEditDTO);
         employeeService.editPassword(passwordEditDTO);
         return Result.success();

@@ -82,11 +82,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         //设置状态，1表示启用，0表示禁用
         employee.setStatus(StatusConstant.ENABLE);
         //设置当前记录的创建时间和修改时间
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
+        //employee.setCreateTime(LocalDateTime.now());
+        //employee.setUpdateTime(LocalDateTime.now());
         //设置当前记录创建人id和修改人id
-        employee.setCreateUser(BaseContext.getCurrentId());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+        //employee.setCreateUser(BaseContext.getCurrentId());
+        //employee.setUpdateUser(BaseContext.getCurrentId());
         //保存员工数据
         employeeMapper.insert(employee);
     }
@@ -141,9 +141,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         //对象属性拷贝
         BeanUtils.copyProperties(employeeDTO, employee);
         //完善修改人信息
-        employee.setUpdateTime(LocalDateTime.now());
+        //employee.setUpdateTime(LocalDateTime.now());
         //设置修改人id
-        employee.setUpdateUser(BaseContext.getCurrentId());
+        //employee.setUpdateUser(BaseContext.getCurrentId());
         //调用mapper层方法
         employeeMapper.update(employee);
     }
@@ -167,8 +167,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         //设置新密码
         employee.setPassword(passwordEditDTO.getNewPassword());
         //设置修改人信息
-        employee.setId(currentId);
-        employee.setUpdateTime(LocalDateTime.now());
+        //employee.setId(currentId);
+        //employee.setUpdateTime(LocalDateTime.now());
         employeeMapper.update(employee);
     }
 }
